@@ -1,0 +1,14 @@
+# registry-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: registry-service
+  namespace: default
+spec:
+  selector: 
+    app: registry-server
+  type: NodePort  
+  ports:
+    - port: 5000 # 内部服务之间访问service的入口
+      targetPort: 5000 # 容器的端口
+      nodePort: 31000 # service暴露的端口

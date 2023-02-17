@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: openresty
+  labels:
+    name: test 
+  namespace: dev
+spec:
+  containers:
+  - name: openresty
+    image: 192.168.49.2:31000/openresty2
+    imagePullPolicy: IfNotPresent
+    ports:
+    - containerPort: 8080
